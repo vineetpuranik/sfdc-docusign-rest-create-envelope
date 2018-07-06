@@ -53,9 +53,11 @@ Configure Envelope sending via Apex. This Apex Utility class can then be used in
  Since our recipe will be using the Integrator key to send Envelopes we must ensure that a DocuSign user provides consent to the Integrator key. In this case the DocuSign user will be our Sandbox user. In case of service integrations we can setup a service user and grant consent on this user's behalf.
  
  To complete this step open the following URI in a browser:
- https://accountd.docusign.com/oauth/authresponse_type=code&scope=signature%20impersonation&client_id=YOURKEY&redirect_uri=https://localhost.com
  
- Make sure we add the correct Integrator for the client_id URL parameter and also make sure the redirect_uri parameter matches with the redirect uri you have setup under the integrator key.
+ `https://account-d.docusign.com/oauth/auth?
+  response_type=code&scope=signature%20impersonation&client_id=YOUR_KEY&redirect_uri=https://localhost.com`
+ 
+ Make sure we add the correct Integrator key for the client_id URL parameter and also make sure the redirect_uri parameter matches with the redirect uri you have setup under the integrator key.
  
  This will open up a consent screen. Click Accept
  
@@ -133,18 +135,6 @@ The createEnvelope method can be extended to:
 - Future callouts in order to send Envelopes via Apex Trigger / Scheduled Jobs / Batch jobs
 - Invocable methods to send Envelopes via Process Builders.
 
+## License
 
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
+The DocuSign Java Client is licensed under the following [License](LICENSE).
